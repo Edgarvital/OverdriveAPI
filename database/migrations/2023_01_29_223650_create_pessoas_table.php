@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('telefone')->unique();
             $table->string('documento')->unique();
-            $table->enum('status', [Pessoa::status[0], Pessoa::status[1], Pessoa::status[2]]);
+            $table->enum('status', Pessoa::status);
             $table->foreignId('user_id')->unique()->constrained();
         });
     }
