@@ -11,11 +11,6 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
-     * 'nome',
-    'telefone',
-    'documento',
-    'user_id',
-    'status'
      */
     public function up()
     {
@@ -27,7 +22,7 @@ return new class extends Migration
             $table->string('telefone')->unique();
             $table->string('documento')->unique();
             $table->enum('status', [Pessoa::status[0], Pessoa::status[1], Pessoa::status[2]]);
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->unique()->constrained();
         });
     }
 
