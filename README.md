@@ -24,4 +24,4 @@ Funcionalidades:
 <p style="margin-bottom: 0; font-weight: bolder; color: #c92f2f">Links Importantes:</p>
 GitProject: <a href="https://github.com/users/Edgarvital/projects/3/views/1">Link</a>
 <br>
-Modelo Entidade Relacionamento: <a href="#">Link</a>
+Modelo Entidade Relacionamento: <a href="https://github.com/Edgarvital/OverdriveAPI/tree/main/MER">Link</a>
