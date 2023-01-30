@@ -23,4 +23,12 @@ class Pessoa extends Model
     }
 
     public const status = ['Pendente', 'Ativo', 'Inativo'];
+
+    public static function messages()
+    {
+        return [
+            '*.required' => 'O campo :attribute é obrigatorio!',
+            '*.unique' => 'O campo :attribute deve ser único!'
+        ];
+    }
 }
