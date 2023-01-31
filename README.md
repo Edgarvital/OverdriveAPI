@@ -13,7 +13,7 @@ Funcionalidades:
 <li>Histórico do Status
 <ul>
 <li>Para cada alteração no cadastro da pessoa, deve-se manter o histórico da atualização do status</li>
-<li>Informações: id da pessoa, status, data e hora e usuário fez a alteração</li>
+<li>Informações: id da pessoa, status, data e hora (Timestamp) e usuário que fez a alteração</li>
 <li>Permitir consulta do histórico pelo id da pessoa</li>
 </ul>
 </li>
