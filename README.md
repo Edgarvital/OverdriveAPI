@@ -14,8 +14,6 @@ Funcionalidades:
 <ul>
 <li>Para cada alteração no cadastro da pessoa, deve-se manter o histórico da atualização do status</li>
 <li>Informações: id da pessoa, status, data e hora e usuário fez a alteração</li>
-<li>CPF</li>
-<li>Endere&ccedil;o Completo (CEP, Logradouro, N&uacute;mero, Bairro, Complemento, Cidade)</li>
 <li>Permitir consulta do histórico pelo id da pessoa</li>
 </ul>
 </li>
