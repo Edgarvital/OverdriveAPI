@@ -21,7 +21,12 @@ Funcionalidades:
 </li>
 </ul>
 
-<p style="margin-bottom: 0; font-weight: bolder; color: #c92f2f">Links Importantes:</p>
+<h3 style="margin-bottom: 0; font-weight: bolder; color: #c92f2f">Links Importantes:</h3>
 GitProject: <a href="https://github.com/users/Edgarvital/projects/3/views/1">Link</a>
 <br>
-Modelo Entidade Relacionamento: <a href="https://github.com/Edgarvital/OverdriveAPI/tree/main/MER">Link</a>
+Artefatos (Modelo entidade relacionamentos e Dados do Postman): <a href="https://github.com/Edgarvital/OverdriveAPI/tree/main/Artefatos">Link</a>
+
+<h3>Observações:</h3>
+Como não era necessário ter a parte da autenticação, mas a entidade pessoa tinha uma ligação com o usuário, mantive a tabela user que o próprio laravel fornece, removi a regra de unique no email e fiz a instanciação de user sempre que uma pessoa é criada.<br>
+Inferi também que se o user_id não for informado durante uma atualização do status de uma pessoa, a própria pessoa está atualizando o status e seu user será referênciado quando o histórico do status for criado.<br>
+Sobre o campo data e hora do histórico status, optei por manter o timestamp que o próprio laravel cria na criação do migrate
