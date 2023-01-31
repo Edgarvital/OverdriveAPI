@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('pessoa')->name('pessoa.')->group(function (){
+Route::prefix('pessoas')->name('pessoas.')->group(function (){
     Route::get('/', [\App\Http\Controllers\Api\PessoaController::class, 'index'])->name('index');
     Route::post('/', [\App\Http\Controllers\Api\PessoaController::class, 'store'])->name('store');
     Route::get('/consultarPeloNome', [\App\Http\Controllers\Api\PessoaController::class, 'consultarPeloNome'])->name('buscarPeloNome');

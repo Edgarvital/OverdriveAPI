@@ -1,0 +1,350 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Overdrive Teste",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api"
+        }
+    ],
+    "paths": {
+        "/pessoas": {
+            "get": {
+                "tags": [
+                    "ListarPessoas"
+                ],
+                "summary": "Retorna a lista de todas as pessoas cadastradas no banco",
+                "description": "Recupera todas as linhas da tabela de pessoa do banco e retorna como um json",
+                "operationId": "d8695a3e195029dad020e09fbb17dd55",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not authorized"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "CadastrarPessoa"
+                ],
+                "summary": "Cadastro de Pessoa",
+                "description": "Cadastro de pessoa através dos campos: nome, documento, telefone, status e email/password como opcionais.\n     O campo status deve ser informado como uma das seguintes opções: (Ativo, Inativo, Pendente).",
+                "operationId": "0d9c3e6be603bffcf1a9b5f2eb12b4d0",
+                "requestBody": {
+                    "description": "Dados da pessoa",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nome",
+                                    "documento",
+                                    "telefone",
+                                    "status"
+                                ],
+                                "properties": {
+                                    "nome": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Edgar Vinicius"
+                                    },
+                                    "documento": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "105.977.514-44"
+                                    },
+                                    "telefone": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "(87) 99814-5678"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Inativo"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "email1@email.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Usuário Cadastrado com Sucesso!"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not authorized"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/pessoas/consultarPeloNome?nome={nome}": {
+            "get": {
+                "tags": [
+                    "ConsultarPeloNome"
+                ],
+                "summary": "Recupera uma lista de pessoas que possuam o nome passado",
+                "description": "Recupera a lista de pessoas a partir de um parametro com o nome e busca no banco as pessoas que tenham aquele nome",
+                "operationId": "799e2f7ad774d70c157f0ae23e8bca24",
+                "parameters": [
+                    {
+                        "name": "nome",
+                        "in": "path",
+                        "description": "nome de uma pessoa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Edgar"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not authorized"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/pessoas/{id}": {
+            "post": {
+                "tags": [
+                    "AtualizarPessoa"
+                ],
+                "summary": "Atualizar Pessoa",
+                "description": "Atualizacao de pessoa através dos campos: nome, documento, telefone, status.\n     O campo user_id pode ser informado opcionalmente para quando uma alteração do status ocorra, dessa forma essa informação será inserida no historico status.\n     O campo status deve ser informado como uma das seguintes opções: (Ativo, Inativo, Pendente).",
+                "operationId": "4a0331474585fa90e2ccfb537a2badac",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da pessoa",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Dados da pessoa",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nome",
+                                    "documento",
+                                    "telefone",
+                                    "status"
+                                ],
+                                "properties": {
+                                    "nome": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Osmar Osvaldo"
+                                    },
+                                    "documento": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "105.977.514-45"
+                                    },
+                                    "telefone": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "(87) 99814-5679"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Ativo"
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "format": "number",
+                                        "example": "3"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Usuário Cadastrado com Sucesso!"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not authorized"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/pessoas/{id}/historicoStatus": {
+            "get": {
+                "tags": [
+                    "ListarHistoricoStatus"
+                ],
+                "summary": "Recupera uma lista com todas as alteracoes de status de uma pessoa",
+                "description": "Recupera a lista de pessoas a partir de um parametro com o id de uma pessoa e busca todos os historicos referentes a essa pessoa",
+                "operationId": "cce6084cfd27dce215cae1af82a92ca4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id de uma pessoa",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not authorized"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
