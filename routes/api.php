@@ -18,5 +18,6 @@ Route::prefix('pessoa')->name('pessoa.')->group(function (){
     Route::get('/', [\App\Http\Controllers\Api\PessoaController::class, 'index'])->name('index');
     Route::post('/', [\App\Http\Controllers\Api\PessoaController::class, 'store'])->name('store');
     Route::get('/consultarPeloNome', [\App\Http\Controllers\Api\PessoaController::class, 'consultarPeloNome'])->name('buscarPeloNome');
+    Route::get('/{id}/historicoStatus', [\App\Http\Controllers\Api\PessoaController::class, 'listaHistoricoStatus'])->name('listaHistoricoStatus');
     Route::post('/{id}', [\App\Http\Controllers\Api\PessoaController::class, 'update'])->name('update');
 });
