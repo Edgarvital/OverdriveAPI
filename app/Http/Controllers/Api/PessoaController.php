@@ -24,7 +24,20 @@ class PessoaController extends Controller
      *     description="Recupera todas as linhas da tabela de pessoa do banco e retorna como um json",
      *     path="/pessoas",
      *     @OA\Response(
-     *         response="200", description="Success"
+     *         response="200", description="success",
+     *          @OA\JsonContent(
+     *             @OA\Property(property="data", type="array",
+     *               @OA\Items(
+     *                   @OA\Property(property="id", type="integer", example="1"),
+     *                   @OA\Property(property="nome", type="string", example="Edgar Vinicius"),
+     *                   @OA\Property(property="documento", type="string", example="106.981.555-55"),
+     *                   @OA\Property(property="status", type="string", example="Inativo"),
+     *                   @OA\Property(property="user_id", type="integer", example="1"),
+     *                   @OA\Property(property="created_at", type="date", example="2023-01-18 00:00:00"),
+     *                   @OA\Property(property="updated_at", type="date", example="2023-01-18 00:00:00"),
+     *              )
+     *           ),
+     *         )
      *     ),
      *     @OA\Response(
      *         response="500", description="Erro interno do servidor",
@@ -63,6 +76,19 @@ class PessoaController extends Controller
      *     ),
      *     @OA\Response(
      *         response="200", description="Success",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="data", type="array",
+     *               @OA\Items(
+     *                   @OA\Property(property="id", type="integer", example="1"),
+     *                   @OA\Property(property="nome", type="string", example="Edgar Vinicius"),
+     *                   @OA\Property(property="documento", type="string", example="106.981.555-55"),
+     *                   @OA\Property(property="status", type="string", example="Inativo"),
+     *                   @OA\Property(property="user_id", type="integer", example="1"),
+     *                   @OA\Property(property="created_at", type="date", example="2023-01-18 00:00:00"),
+     *                   @OA\Property(property="updated_at", type="date", example="2023-01-18 00:00:00"),
+     *              )
+     *           ),
+     *         )
      *     ),
      *     @OA\Response(
      *         response="500", description="Erro interno do servidor",
@@ -243,6 +269,18 @@ class PessoaController extends Controller
      *     ),
      *     @OA\Response(
      *         response="200", description="Success",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="data", type="array",
+     *               @OA\Items(
+     *                   @OA\Property(property="id", type="integer", example="1"),
+     *                   @OA\Property(property="status", type="string", example="Inativo"),
+     *                   @OA\Property(property="user_id", type="integer", example="4"),
+     *                   @OA\Property(property="pessoa_id", type="integer", example="3"),
+     *                   @OA\Property(property="created_at", type="date", example="2023-01-18 00:00:00"),
+     *                   @OA\Property(property="updated_at", type="date", example="2023-01-18 00:00:00"),
+     *              )
+     *           ),
+     *         )
      *     ),
      *     @OA\Response(
      *         response="500", description="Erro interno do servidor",

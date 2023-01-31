@@ -20,7 +20,54 @@
                 "operationId": "d8695a3e195029dad020e09fbb17dd55",
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "nome": {
+                                                        "type": "string",
+                                                        "example": "Edgar Vinicius"
+                                                    },
+                                                    "documento": {
+                                                        "type": "string",
+                                                        "example": "106.981.555-55"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "example": "Inativo"
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2023-01-18 00:00:00"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2023-01-18 00:00:00"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "500": {
                         "description": "Erro interno do servidor",
@@ -166,7 +213,54 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "nome": {
+                                                        "type": "string",
+                                                        "example": "Edgar Vinicius"
+                                                    },
+                                                    "documento": {
+                                                        "type": "string",
+                                                        "example": "106.981.555-55"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "example": "Inativo"
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2023-01-18 00:00:00"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2023-01-18 00:00:00"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "500": {
                         "description": "Erro interno do servidor",
@@ -197,7 +291,7 @@
                     "AtualizarPessoa"
                 ],
                 "summary": "Atualizar Pessoa",
-                "description": "Atualizacao de pessoa através dos campos: nome, documento, telefone, status.\n     O campo user_id pode ser informado opcionalmente para quando uma alteração do status ocorra, dessa forma essa informação será inserida no historico status.\n     O campo status deve ser informado como uma das seguintes opções: (Ativo, Inativo, Pendente).",
+                "description": "Atualizacao de pessoa através dos campos: nome, documento, telefone, status.\n     O campo user_id pode ser informado opcionalmente para quando uma alteração do status ocorra, dessa forma essa informação será inserida no historico status.\n     O campo status deve ser informado como uma das seguintes opções: (Ativo, Inativo, Pendente).\n     A data e hora é registrada através dos timestamp (created_at/updated_at)",
                 "operationId": "4a0331474585fa90e2ccfb537a2badac",
                 "parameters": [
                     {
@@ -321,7 +415,50 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "example": "Inativo"
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": "4"
+                                                    },
+                                                    "pessoa_id": {
+                                                        "type": "integer",
+                                                        "example": "3"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2023-01-18 00:00:00"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2023-01-18 00:00:00"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "500": {
                         "description": "Erro interno do servidor",
