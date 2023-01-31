@@ -29,4 +29,5 @@ Artefatos (Modelo entidade relacionamentos e Dados do Postman): <a href="https:/
 <h3>Observações:</h3>
 Como não era necessário ter a parte da autenticação, mas a entidade pessoa tinha uma ligação com o usuário, mantive a tabela user que o próprio laravel fornece, removi a regra de unique no email e fiz a instanciação de user sempre que uma pessoa é criada.<br>
 Inferi também que se o user_id não for informado durante uma atualização do status de uma pessoa, a própria pessoa está atualizando o status e seu user será referênciado quando o histórico do status for criado.<br>
-Sobre o campo data e hora do histórico status, optei por manter o timestamp que o próprio laravel cria na criação do migrate
+Sobre o campo data e hora do histórico status, optei por manter o timestamp que o próprio laravel cria na criação do migrate<br>
+A rota do swagger é: localhost:8000/api/docs
