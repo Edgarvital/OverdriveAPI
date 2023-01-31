@@ -87,8 +87,8 @@ class PessoaController extends Controller
         } catch (\Exception $e) {
             return response()->json(Messages::message(false, $e->getMessage()), 500);
         }
+        return response()->json(Messages::message(true, 'Pessoa atualizada com sucesso!'), 200);
 
-        return response()->json(Messages::message(true, 'Pessoa atualizada com sucesso!'), 204);
     }
 
     public function listaHistoricoStatus($id)
