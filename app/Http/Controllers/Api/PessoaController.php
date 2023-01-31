@@ -150,7 +150,8 @@ class PessoaController extends Controller
      * summary="Atualizar Pessoa",
      * description="Atualizacao de pessoa através dos campos: nome, documento, telefone, status.
      O campo user_id pode ser informado opcionalmente para quando uma alteração do status ocorra, dessa forma essa informação será inserida no historico status.
-     O campo status deve ser informado como uma das seguintes opções: (Ativo, Inativo, Pendente).",
+     O campo status deve ser informado como uma das seguintes opções: (Ativo, Inativo, Pendente).
+     A data e hora é registrada através dos timestamp (created_at/updated_at)",
      * tags={"AtualizarPessoa"},
      *     @OA\Parameter(
      *         description="Id da pessoa",
