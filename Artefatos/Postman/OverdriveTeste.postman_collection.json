@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "d97c4f3d-2b04-4e28-97e6-dc8ec4035783",
+		"name": "OverdriveTeste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25152880"
+	},
+	"item": [
+		{
+			"name": "store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Edgar Viniciusee",
+							"type": "text"
+						},
+						{
+							"key": "documento",
+							"value": "106.981.513-56",
+							"type": "text"
+						},
+						{
+							"key": "telefone",
+							"value": "(87) 99810-5356",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Inativo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pessoas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Edgar Vinicius",
+							"type": "text"
+						},
+						{
+							"key": "documento",
+							"value": "106.981.513-33",
+							"type": "text"
+						},
+						{
+							"key": "telefone",
+							"value": "(87) 99810-5331",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Inativo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pessoas/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pessoas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultarPeloNome",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pessoas/consultarPeloNome?nome=Edgar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoas",
+						"consultarPeloNome"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Edgar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_HistoricoStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Josiveldo Periscleito",
+							"type": "text"
+						},
+						{
+							"key": "documento",
+							"value": "106.981.513-66",
+							"type": "text"
+						},
+						{
+							"key": "telefone",
+							"value": "(87) 99810-5355",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Inativo",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pessoas/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listaHistoricoStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pessoas/1/historicoStatus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoas",
+						"1",
+						"historicoStatus"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
