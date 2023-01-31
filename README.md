@@ -21,7 +21,7 @@ Funcionalidades:
 </li>
 </ul>
 
-<p style="margin-bottom: 0; font-weight: bolder; color: #c92f2f">Links Importantes:</p>
+<h3 style="margin-bottom: 0; font-weight: bolder; color: #c92f2f">Links Importantes:</h3>
 GitProject: <a href="https://github.com/users/Edgarvital/projects/3/views/1">Link</a>
 <br>
-Modelo Entidade Relacionamento: <a href="https://github.com/Edgarvital/OverdriveAPI/tree/main/MER">Link</a>
+Artefatos (Modelo entidade relacionamentos e Dados do Postman): <a href="https://github.com/Edgarvital/OverdriveAPI/tree/main/Artefatos">Link</a>
